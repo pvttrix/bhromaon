@@ -1,0 +1,143 @@
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+
+*{
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: $secondary-color
+}
+
+body{
+@include font($body-ff,1.4rem,$fc:$body-color,$lh:1.7);
+padding:0;
+background-color: $body-bg;
+}
+.container{
+    max-width: 1170px;
+    width:100%;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+}
+a,button{
+    transition: all .3s ease-in;
+}
+
+.header{
+    color: $secondary-color;
+    position: relative;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__article {
+        color: $secondary-color;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 48px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        line-height: 40px;
+    }
+    &__description {
+        font-size: 24px;
+        font-weight: 200;
+        text-transform: none;
+        letter-spacing: 7px;
+    }
+}
+
+.form {
+    display: flex;
+    justify-content: right;
+    text-align: center;
+    max-width: 650px;
+    width:100%;
+    margin: 50px auto;
+    &__text {
+        padding: 10px;
+        width:100%;
+        font-weight: 200;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 17px;
+        border: none;
+        outline: none;
+    }
+    &__submit{
+        width: 30%;
+        border:3px solid $secondary-color;
+        border-left: none;
+        padding:25px;
+        background-color: #5474fd;
+        color: $secondary-color;
+        font-size: 14px;
+     }
+    }
+    
+    .scroll {
+        @include posA(null,50%);
+        bottom:180px;
+        &__anchor {
+            color: $primary-color;
+            display: block;
+            position: relative;
+            font-size: 20px;
+        text-decoration: none;
+        font-weight: 300;
+        font-family: 'Josefin Sans', sans-serif;
+        letter-spacing: 3px;
+        &::after {
+            display: block;
+            content: '';
+            
+        }
+    }
+}
+
+.navigation {
+    width:100%;
+    background-color: #5474fd;
+    @include posA(null,0,0,0);
+    bottom:0;
+    & .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        color: $secondary-color;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 40px;
+    }
+}
+.menu {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    &__item {
+        margin-left: 40px;
+    }
+    &__link {
+        font-family: 'Aleo', serif;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+}
+
+
+
+
