@@ -1,27 +1,37 @@
-@mixin font ($ff: inherit, $fz:inherit,$fc:inherit,$fw:400,$lh:1.6){
-font-family: $ff;
-font-size: $fz;
-line-height: $lh;
-font-weight: $fw;
-color:$fc
+@mixin font($ff: inherit, $fz: inherit, $fc: inherit, $fw: 400, $lh: 1.6) {
+  font-family: $ff;
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: $fw;
+  color: $fc;
 }
 
-@mixin posA($top:50%,$left:50%,$delta_x:-50%,$delta_y:-50%) {
-    position: absolute;
-    top: $top;
-    left: $left;
-    transform: translate($delta_x,$delta_y);
+@mixin posA($top: 50%, $left: 50%, $delta_x: -50%, $delta_y: -50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($delta_x, $delta_y);
 }
 
-@mixin tr(){
-    transition: all .3s ease-in;
+@mixin tr() {
+  transition: all 0.3s ease-in;
 }
 
-@mixin hover () {
-    @include tr;
-    &:hover,
-    &:focus,
-    &:active{
-        @content
-    }
+@mixin sections() {
+  text-align: center;
+  color: #fff;
+  background-attachment: fixed;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin hover() {
+  @include tr;
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
 }
